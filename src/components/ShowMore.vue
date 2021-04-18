@@ -1,5 +1,10 @@
 <template>
-  <button class="show-more" type="button">Показать еще</button>
+  <button
+      class="show-more"
+      type="button"
+      @click="$emit('showAll')"
+  >Показать еще
+  </button>
 </template>
 
 <script>
@@ -19,6 +24,7 @@ name: "ShowMore"
   outline: 0;
   transition: opacity $default-transition-settings;
   cursor: pointer;
+  align-self: flex-end;
 
   &::after {
     @include pseudo();
