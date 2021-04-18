@@ -1,7 +1,7 @@
 <template>
   <article
       class="ad"
-      :class="[data.seen ? 'ad--seen' : '']"
+      :class="{'ad--seen': data.seen }"
   >
     <span class="ad__seen-label" v-if="data.seen">Просмотрено</span>
     <div class="ad__top-wrapper">
@@ -32,7 +32,7 @@ import ItemName from "@/components/ItemName";
 import City from "@/components/City";
 import Date from "@/components/Date";
 export default {
-  name: "Card",
+  name: "Ad",
   components: {
     Slider,
     Actions,
@@ -60,9 +60,12 @@ export default {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   transition: box-shadow $default-transition-settings;
 
-
   &:hover {
-    box-shadow: 0 4px 10px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 10px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    opacity: 0.8;
   }
 
   &--seen {
