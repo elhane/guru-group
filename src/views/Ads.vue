@@ -1,65 +1,93 @@
 <template>
-  <section class="container">
-    <h2>Похожие объявления</h2>
-    <ul class="ads">
-      <li
-        v-for="card in cards"
-        :id="card.id"
-        :key="card.id"
-        class="ads__item"
-      >
-        <Card :data="card"/>
-      </li>
-    </ul>
-    <ShowMore />
+  <section class="similar-ads container">
+    <h1 class="similar-ads__title">Похожие объявления</h1>
+    <transition appear name="fade">
+      <ul class="ads">
+        <li
+          v-for="ad in limitedAds"
+          :id="ad.id"
+          :key="ad.id"
+          class="ads__item"
+        >
+          <Ad :data="ad"/>
+        </li>
+      </ul>
+    </transition>
+    <p class="similar-ads__empty-message" v-if="!ads.length">Похожие объявления отсутсвтуют :(</p>
+    <ShowMore @showAll="showAll" v-show="this.limit < this.allAdsAmount"/>
   </section>
 </template>
 
 <script>
-import Card from "@/components/Card";
+import { getData } from "@/helpers.js";
+import Ad from "@/components/Ad";
 import ShowMore from "@/components/ShowMore";
 export default {
   name: "Ads",
   components: {
-    Card,
+    Ad,
     ShowMore
+  },
+  created: async function() {
+    this.ads = await getData("https://6075786f0baf7c0017fa64ce.mockapi.io/products");
+    this.allAdsAmount = this.ads.length;
   },
   data() {
     return {
-      cards: [
-        {
-          id: "3",
-          oldPrice: "911.00",
-          price: "208.00",
-          title: "Handcrafted Soft Pizza",
-          seen: false,
-          locality: "Hoegerstad",
-          date: 1618313754
-        },
-        {
-          id: "6",
-          oldPrice: "8.00",
-          price: "122.00",
-          title: "Intelligent Rubber Tuna",
-          seen: true,
-          locality: "Roobmouthbsjksdhf",
-          date: 1618313574
-        },
-      ]
+      ads: [],
+      allAdsAmount: null,
+      limit: 16,
     }
   },
+  computed: {
+   limitedAds() {
+     return this.ads.slice(0, this.limit)
+   },
+  },
+  methods: {
+    showAll() {
+      return this.limit = this.allAdsAmount;
+    }
+  }
 }
 </script>
 
 <style lang="scss">
-  .ads {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    @include list-reset();
+.similar-ads {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 33px;
 
-    &__item {
-      margin: 0 15px;
+  &__title {
+    @include text(22px, 24px, 700);
+  }
+}
+
+.ads {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include list-reset();
+
+  @include viewport--md {
+    justify-content: center;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    @include viewport--md {
+      margin-left: 12px;
+      margin-right: 12px;
     }
   }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
 </style>
