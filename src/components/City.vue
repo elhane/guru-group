@@ -1,5 +1,5 @@
 <template>
-  <p class="city">{{ data | cut }}</p>
+  <p class="city" :title="data">{{ data | cut }}</p>
 </template>
 
 <script>
