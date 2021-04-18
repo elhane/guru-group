@@ -7,5 +7,5 @@ module.exports = {
                     @import "@/sass/_mixins.scss";`
             }
         }
-    }
+    },
 };
