@@ -31,11 +31,16 @@ export default {
   data() {
     return {
       options: {
-        rewind : true,
-        width  : 224,
+        rewind: true,
+        width: 224,
         perPage: 1,
         arrows: false,
         lazyLoad: true,
+        breakpoints: {
+          1023: {
+            width: 280,
+          },
+        }
       },
     };
   },
@@ -47,7 +52,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .slider {
     cursor: pointer;
@@ -57,6 +61,13 @@ export default {
       height: 260px;
       object-fit: cover;
       object-position: center;
+    }
+
+    @include viewport--md {
+      img {
+        width: 280px;
+        height: 280px;
+      }
     }
   }
 </style>
