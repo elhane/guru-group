@@ -1,11 +1,10 @@
 // Vendor
 //---------------------------------
 @import "vendor/normalize";
-//@import "vendor/swiper";
+@import "vendor/splider";
 
 // Global
 //---------------------------------
-@import "mixins";
 @import "global/fonts";
 @import "global/reboot";
 @import "global/utils";

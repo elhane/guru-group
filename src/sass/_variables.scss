@@ -12,27 +12,29 @@ $color-transparent:               rgba(255, 255, 255, 0);
 
 $color-black:                     #2c2c2c;
 $color-white:                     #f2f2f2;
-//$color-blue:                      #026fc2;
+$color-blue:                      #026fc2;
 $color-bondi-blue:                #00a0ab;
 $color-pale-prim:                 #fff6a5;
 $color-suva-gray:                 #8f8f8f;
 $color-very-light-gray:           #c7c7c7;
+$color-zambezi:                   #5a5a5a;
+$color-silver:                    #c4c4c4;
 
 // Gradient
 
-$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+$black-to-right:                  linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
 
 // Typography
 //---------------------------------
 
-$font-family--ubuntu:               "Ubuntu", "Arial", sans-serif;
+$font-family--ubuntu:             "Ubuntu", "Arial", sans-serif;
 
 // Animation
 //---------------------------------
 
 $default-transition-settings:       0.3s ease;
 $modal-transition-settings:         0.6s cubic-bezier(0.55, 0, 0.1, 1);
-$autofill-transition-settings: background-color 10000000s ease-out;
+$autofill-transition-settings:      background-color 10000000s ease-out;
 
 // Viewports
 //---------------------------------
