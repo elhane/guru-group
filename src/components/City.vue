@@ -15,11 +15,11 @@ export default {
   },
   filters: {
     cut: function (value) {
-      if (!value) return ''
-      value = value.toString()
-      return value.length > 14 ? value.slice(0, 15)+"..." : value
+      if (!value) return "";
+      value = value.toString();
+      return value.length > 14 ? value.slice(0, 15)+"..." : value;
     }
-  }
+  },
 }
 </script>
 

@@ -49,7 +49,7 @@ export default {
         return {}
       },
     },
-  }
+  },
 }
 </script>
 
@@ -103,10 +103,6 @@ export default {
   &__description-bottom {
     display: flex;
     justify-content: space-between;
-  }
-
-  &__description-top {
-    margin-top: 5px;
   }
 
   &__description-bottom {

@@ -127,7 +127,7 @@
 .splide__pagination {
   position: absolute;
   z-index: 1;
-  bottom: .5em;
+  bottom: 0.2em;
   left: 50%;
   transform: translateX(-50%);
   padding: 0;
@@ -140,7 +140,7 @@
   background: $color-silver;
   border-radius: 50%;
   border: 1px solid $color-zambezi;
-  margin: 3px;
+  margin: 4px;
   padding: 0;
   transition: $default-transition-settings;
   //border: none;

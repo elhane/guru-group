@@ -9,27 +9,28 @@
 
 <script>
 export default {
-name: "ShowMore"
+  name: "ShowMore"
 }
 </script>
 
 <style lang="scss">
 .show-more {
+  align-self: flex-end;
   position: relative;
-  padding-right: 20px;
+  padding: 10px 20px 10px 0;
+  max-width: 200px;
+  text-align: left;
   color: $color-bondi-blue;
   @include text(14px, 16px, 500);
   background-color: transparent;
   border: 0;
-  outline: 0;
   transition: opacity $default-transition-settings;
   cursor: pointer;
-  align-self: flex-end;
 
   &::after {
     @include pseudo();
     right: 0;
-    top: 2px;
+    top: 11px;
     width: 10px;
     height: 10px;
     border: 2px solid $color-bondi-blue;

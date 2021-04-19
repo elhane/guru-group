@@ -1,7 +1,6 @@
 <template>
   <section class="main-page container">
     <h1 class="main-page__title">Тестовое задание</h1>
-    <p>тут будет ссылка на компоненты и объявления</p>
     <router-link
         v-for="tab in tabs"
         :key="tab.link"
@@ -36,10 +35,25 @@ export default {
 .main-page {
   &__title {
     font-weight: 700;
+    margin-bottom: 40px;
+    margin-top: 50px;
+    @include text(44px, 48px, 700);
+
   }
 
   &__link {
     display: block;
+    margin-bottom: 25px;
+    @include text(26px, 30px);
+    transition: $default-transition-settings;
+
+    &:hover {
+      color: $color-bondi-blue;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
   }
 }
 </style>

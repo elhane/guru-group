@@ -1,7 +1,6 @@
 <template>
   <section class="similar-ads container">
     <h1 class="similar-ads__title">Похожие объявления</h1>
-    <transition appear name="fade">
       <ul class="ads">
         <li
           v-for="ad in limitedAds"
@@ -12,14 +11,14 @@
           <Ad :data="ad"/>
         </li>
       </ul>
-    </transition>
-    <p class="similar-ads__empty-message" v-if="!ads.length">Похожие объявления отсутсвтуют :(</p>
+    <p class="similar-ads__empty-message" v-if="!ads.length && allAdsAmount !== null">Похожие объявления отсутсвтуют :(</p>
+    <p class="similar-ads__empty-message" v-if="!ads.length">Объявления загружаются</p>
     <ShowMore @showAll="showAll" v-show="this.limit < this.allAdsAmount"/>
   </section>
 </template>
 
 <script>
-import { getData } from "@/helpers.js";
+import { getData } from "@/get-data.js";
 import Ad from "@/components/Ad";
 import ShowMore from "@/components/ShowMore";
 export default {
@@ -82,12 +81,5 @@ export default {
       margin-right: 12px;
     }
   }
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
-  opacity: 0;
 }
 </style>

@@ -21,21 +21,23 @@ name: "Actions"
   right: 0;
   bottom: 0;
   display: flex;
-  padding: 10px;
+  padding: 19px 7px;
   flex-direction: column;
 
   &__button {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     border: 0;
     background-color: transparent;
     cursor: pointer;
+    outline: 0;
 
     svg path {
       fill: $color-default-white;
       transition: fill $default-transition-settings;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       svg path {
         fill: $color-bondi-blue;
       }
