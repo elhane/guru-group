@@ -1,5 +1,6 @@
 <template>
   <section class="similar-ads container">
+    <router-link class="link-back" to="/" tag="a">Вернуться назад </router-link>
     <h1 class="similar-ads__title">Похожие объявления</h1>
       <ul class="ads">
         <li

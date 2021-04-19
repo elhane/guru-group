@@ -1,5 +1,6 @@
 <template>
   <section class="ui-kit container">
+    <router-link class="link-back" to="/" tag="a">Вернуться назад </router-link>
     <h1 class="ui-kit__title">UI-kit components</h1>
       <ul class="ui-kit__list">
         <li class="ui-kit__item">
@@ -128,6 +129,29 @@ export default {
       width: 50px;
       height: 120px;
     }
+  }
+}
+
+.link-back {
+  position: relative;
+  padding: 10px 0 10px 15px;
+  max-width: 200px;
+  text-align: left;
+  color: $color-bondi-blue;
+  @include text(14px, 16px, 500);
+  transition: opacity $default-transition-settings;
+  cursor: pointer;
+
+  &::after {
+    @include pseudo();
+    left: 0;
+    top: 13px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid $color-bondi-blue;
+    border-top-style: none;
+    border-right-style: none;
+    transform: rotate(45deg);
   }
 }
 </style>
