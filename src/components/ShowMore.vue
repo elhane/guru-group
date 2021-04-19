@@ -1,10 +1,9 @@
 <template>
-  <button
-      class="show-more"
-      type="button"
-      @click="$emit('showAll')"
+  <a href="#"
+     class="show-more"
+     @click="$emit('showAll')"
   >Показать еще
-  </button>
+  </a>
 </template>
 
 <script>
@@ -22,8 +21,6 @@ export default {
   text-align: left;
   color: $color-bondi-blue;
   @include text(14px, 16px, 500);
-  background-color: transparent;
-  border: 0;
   transition: opacity $default-transition-settings;
   cursor: pointer;
 

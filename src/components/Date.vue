@@ -1,5 +1,5 @@
 <template>
-  <p class="date">{{ timeConverter(data) }}</p>
+  <p class="date" title="Дата и время публикации">{{ timeConverter(data) }}</p>
 </template>
 
 <script>
